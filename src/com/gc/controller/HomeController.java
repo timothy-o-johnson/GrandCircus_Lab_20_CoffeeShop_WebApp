@@ -19,6 +19,12 @@ import java.util.ArrayList;
 @Controller
 public class HomeController {
 	
+	@RequestMapping("/register")
+	public ModelAndView helloWorld() {
+				
+		return new ModelAndView("register");
+	}
+	
 	
 	// this is an example showing how to take data from a form and just add it to a page
 	@RequestMapping(value = "/submitform", method = RequestMethod.POST)
@@ -29,7 +35,7 @@ public class HomeController {
 		return "newPage";
 	}
 
-	@RequestMapping("/welcome")
+	/*@RequestMapping("/welcome")
 	public ModelAndView helloWorld() throws ClassNotFoundException, SQLException {
 
 		// prep for step # 3
@@ -64,7 +70,7 @@ public class HomeController {
 		}
 
 		return new ModelAndView("welcome", "message", list);
-	}
+	}*/
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public ModelAndView test(@RequestParam("customerID") String custID, @RequestParam("companyName") String comp,
